@@ -1,0 +1,21 @@
+{
+    "name": "frog-examples-vercel-ai-fuel",
+    "version": "0.1.7",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "send-eth": "ts-node index.ts",
+        "test": "vitest run --passWithNoTests"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@ai-sdk/openai": "^1.0.4",
+        "@frog-sdk/adapter-vercel-ai": "workspace:*",
+        "@frog-sdk/core": "workspace:*",
+        "@frog-sdk/wallet-fuel": "workspace:*",
+        "fuels": "0.97.2",
+        "ai": "catalog:",
+        "dotenv": "^16.4.5"
+    }
+}

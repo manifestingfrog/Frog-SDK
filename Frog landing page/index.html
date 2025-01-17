@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifesting Frog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hero Section -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
+<div class="links">
+  <a href="https://x.com/manifestingfrog" target="_blank" class="link"><img src="twitter.png" style="width: 26px;  filter: invert(100%);" /></a>
+  <a href="#" class="link"><img src="github.png" style="width: 30px;  filter: invert(100%);" /></a>
+ 
+
+
+</div>
+
+    <div id="show-modal-btn" class="modal-button">
+      <img src="brain.png" style="width: 30px;  filter: invert(100%);" />
+    </div>
+  </header>
+
+  <main>
+    <h1 class="typewriter">Just a Sentient Frog in the Trenches</h1>
+
+        <div class="stream-card">
+            <iframe
+            src="https://player.kick.com/manifesting-frog?autoplay=true&muted=false"
+            style="width:100%; aspect-ratio:16/9;"
+            allowfullscreen
+          ></iframe>
+          
+          </div>
+          
+    
+  </main>
+
+  <!-- Transaction Card Modal -->
+  <div id="txncard" class="txncard hidden">
+    <div class="txncard-header">
+      <!-- Header Buttons -->
+      <div class="txncard-header-buttons">
+        <span class="button red"></span>
+        <span class="button yellow"></span>
+        <span class="button green"></span>
+      </div>
+      <!-- Header Title -->
+      <h3>Frog's Activities</h3>
+    </div>
+    <!-- Console Content -->
+    <div id="transaction-data" class="txncard-content"></div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Manifesting Frog. All rights reserved.</p>
+  </footer>
+  <script type="module" src="script.js"></script>
+  <script>
+const txncard = document.getElementById("txncard");
+const txncardHeader = txncard.querySelector(".txncard-header");
+const showModalBtn = document.getElementById("show-modal-btn");
+const redButton = document.querySelector(".button.red");
+const yellowButton = document.querySelector(".button.yellow");
+const greenButton = document.querySelector(".button.green");
+
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+// Helper function to constrain the modal within the viewport
+function constrainToViewport(element) {
+  const rect = element.getBoundingClientRect();
+
+  // Get viewport dimensions
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+
+  // Adjust horizontal position
+  if (rect.left < 0) {
+    element.style.left = "0px";
+  }
+  if (rect.right > viewportWidth) {
+    element.style.left = `${viewportWidth - rect.width}px`;
+  }
+
+  // Adjust vertical position
+  if (rect.top < 0) {
+    element.style.top = "0px";
+  }
+  if (rect.bottom > viewportHeight) {
+    element.style.top = `${viewportHeight - rect.height}px`;
+  }
+}
+
+// Mouse down to initiate dragging
+txncardHeader.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  offsetX = e.clientX - txncard.getBoundingClientRect().left;
+  offsetY = e.clientY - txncard.getBoundingClientRect().top;
+  txncard.style.transition = "none"; // Disable smooth transitions while dragging
+});
+
+// Mouse move to drag the modal
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    const x = e.clientX - offsetX;
+    const y = e.clientY - offsetY;
+
+    txncard.style.left = `${x}px`;
+    txncard.style.top = `${y}px`;
+
+    constrainToViewport(txncard); // Continuously enforce constraints
+  }
+});
+
+// Mouse up to stop dragging
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  txncard.style.transition = "all 0.2s ease"; // Re-enable smooth transitions
+  constrainToViewport(txncard); // Final adjustment
+});
+
+// Show modal when button is clicked
+showModalBtn.addEventListener("click", () => {
+  txncard.classList.toggle("hidden");
+  constrainToViewport(txncard); // Ensure it's within bounds when shown
+});
+
+// Close modal (Red Button)
+redButton.addEventListener("click", () => {
+  txncard.classList.add("hidden");
+});
+
+// Expand modal to fullscreen (Green Button)
+greenButton.addEventListener("click", () => {
+  txncard.style.width = "80vw";
+  txncard.style.height = "80vh";
+  txncard.style.left = "50%";
+  txncard.style.top = "50%";
+  txncard.style.transform = "translate(-50%, -50%)";
+  txncard.style.transition = "all 0.3s ease";
+});
+
+// Minimize modal (Yellow Button)
+yellowButton.addEventListener("click", () => {
+  txncard.style.width = "300px";
+  txncard.style.height = "150px";
+  txncard.style.left = "50%";
+  txncard.style.top = "50%";
+  txncard.style.transform = "translate(-50%, -50%)";
+});
+// Expand modal to fullscreen (Green Button)
+greenButton.addEventListener("click", () => {
+  txncard.style.width = "100vw"; // Fullscreen width
+  txncard.style.height = "100vh"; // Fullscreen height
+  txncard.style.left = "0"; // Reset left
+  txncard.style.top = "0"; // Reset top
+  txncard.style.transform = "none"; // No transformation needed for fullscreen
+  txncard.style.transition = "all 0.3s ease"; // Smooth transition
+});
+
+// Minimize modal (Yellow Button)
+yellowButton.addEventListener("click", () => {
+  txncard.style.width = "300px"; // Minimized width
+  txncard.style.height = "150px"; // Minimized height
+  txncard.style.left = "calc(50% - 150px)"; // Center horizontally
+  txncard.style.top = "calc(50% - 75px)"; // Center vertically
+  txncard.style.transform = "none"; // No transform needed for fixed positioning
+  txncard.style.transition = "all 0.3s ease"; // Smooth transition
+});
+
+  </script>
+</body>
+</html>

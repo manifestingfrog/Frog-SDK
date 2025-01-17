@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "frog-sdk-example-langchain-web3"
+version = "0.1.0"
+description = "frog example for Langchain with web3.py"
+authors = ["Andrea Villa <andreakarimodm@gmail.com>"]
+readme = "README.md"
+keywords = ["frog", "sdk", "web3", "agents", "ai"]
+homepage = "https://ohmyfrog.dev/"
+repository = "https://github.com/frog-sdk/frog"
+packages = [
+    { include = "example.py" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain = "^0.3.2"
+langchain-openai = "^0.2.14"
+python-dotenv = "^1.0.1" 
+web3 = "^6.20.3"
+frog-sdk = "^0.1.0"
+frog-sdk-wallet-evm = "^0.1.0"
+frog-sdk-wallet-web3 = "^0.1.0"
+frog-sdk-plugin-erc20 = "^0.1.0"
+frog-sdk-adapter-langchain = "^0.1.0"
+frog-sdk-plugin-coingecko = "^0.1.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.0"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/frog-sdk/frog/issues"
+
+[tool.pytest.ini_options]
+addopts = [
+  "--import-mode=importlib",
+]
+pythonpath = "src"
+asyncio_default_fixture_loop_scope = "function"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.6"
+frog-sdk = { path = "../../../src/frog-sdk", develop = true }
+frog-sdk-wallet-evm = { path = "../../../src/wallets/evm", develop = true }
+frog-sdk-wallet-web3 = { path = "../../../src/wallets/web3", develop = true }
+frog-sdk-plugin-erc20 = { path = "../../../src/plugins/erc20", develop = true }
+frog-sdk-plugin-coingecko = { path = "../../../src/plugins/coingecko", develop = true }
+frog-sdk-adapter-langchain = { path = "../../../src/adapters/langchain", develop = true }
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

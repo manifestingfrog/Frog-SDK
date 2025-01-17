@@ -1,0 +1,26 @@
+{
+    "name": "frog-examples-vercel-ai-solana",
+    "version": "0.2.14",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "vitest run --passWithNoTests"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@ai-sdk/openai": "^1.0.4",
+        "@frog-sdk/adapter-vercel-ai": "workspace:*",
+        "@frog-sdk/core": "workspace:*",
+        "@frog-sdk/plugin-coingecko": "workspace:*",
+        "@frog-sdk/plugin-jupiter": "workspace:*",
+        "@frog-sdk/plugin-pumpfun": "workspace:*",
+        "@frog-sdk/plugin-spl-token": "workspace:*",
+        "@frog-sdk/wallet-solana": "workspace:*",
+        "@solana/web3.js": "catalog:",
+        "ai": "catalog:",
+        "bip39": "^3.1.0",
+        "bs58": "^6.0.0",
+        "dotenv": "^16.4.5"
+    }
+}

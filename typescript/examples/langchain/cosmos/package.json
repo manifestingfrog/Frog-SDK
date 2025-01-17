@@ -1,0 +1,23 @@
+{
+    "name": "frog-examples-langchain-cosmos",
+    "version": "0.0.2",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "vitest run --passWithNoTests"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@frog-sdk/adapter-langchain": "workspace:*",
+        "@frog-sdk/plugin-cosmosbank": "workspace:*",
+        "@frog-sdk/wallet-cosmos": "workspace:*",
+        "@frog-sdk/core": "workspace:*",
+        "@cosmjs/stargate": "^0.32.4",
+        "@langchain/core": "catalog:",
+        "@langchain/cohere": "^0.3.2",
+        "@cosmjs/proto-signing": "^0.32.4",
+        "dotenv": "^16.4.5",
+        "langchain": "^0.3.2"
+    }
+}

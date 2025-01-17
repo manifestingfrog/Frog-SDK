@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "frog-sdk-plugin-superfluid"
+version = "0.1.0"
+description = "frog plugin for Superfluid"
+authors = ["Andrea Villa <andreakarimodm@gmail.com>"]
+readme = "README.md"
+keywords = ["frog", "sdk", "web3", "agents", "ai"]
+homepage = "https://ohmyfrog.dev/"
+repository = "https://github.com/frog-sdk/frog"
+packages = [
+    { include = "frog_plugins/superfluid" },
+] 
+
+[tool.poetry.dependencies]
+python = "^3.10"
+frog-sdk = { path = "../../frog-sdk", develop = true }
+frog-sdk-wallet-evm = { path = "../../wallets/evm", develop = true }
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.0"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/frog-sdk/frog/issues"
+
+[tool.pytest.ini_options]
+addopts = [
+  "--import-mode=importlib",
+]
+pythonpath = "."
+asyncio_default_fixture_loop_scope = "function"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.6"
+frog-sdk = { path = "../../frog-sdk", develop = true }
+frog-sdk-wallet-evm = { path = "../../wallets/evm", develop = true }
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

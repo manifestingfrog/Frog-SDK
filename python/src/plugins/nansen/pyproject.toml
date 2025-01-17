@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "frog-plugin-nansen"
+version = "0.1.0"
+description = "Nansen plugin for frog SDK"
+authors = ["frog SDK Team"]
+readme = "README.md"
+keywords = ["frog", "sdk", "web3", "agents", "ai", "nansen"]
+homepage = "https://ohmyfrog.dev/"
+repository = "https://github.com/frog-sdk/frog"
+packages = [
+    { include = "frog_plugins/nansen" },
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/frog-sdk/frog/issues"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.8.6"
+frog-sdk = "^0.1.1"
+pydantic = "^2.0.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.6"
+frog-sdk = { path = "../../frog-sdk", develop = true }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

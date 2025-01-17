@@ -1,0 +1,32 @@
+{
+    "name": "frog-examples-model-context-protocol-viem",
+    "version": "0.2.10",
+    "type": "module",
+    "description": "",
+    "private": true,
+    "bin": {
+        "frog": "./build/index.js"
+    },
+    "scripts": {
+        "test": "vitest run --passWithNoTests",
+        "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\""
+    },
+    "files": ["build"],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@ai-sdk/openai": "^1.0.4",
+        "@frog-sdk/adapter-model-context-protocol": "workspace:*",
+        "@frog-sdk/core": "workspace:*",
+        "@frog-sdk/plugin-erc20": "workspace:*",
+        "@frog-sdk/plugin-kim": "workspace:*",
+        "@frog-sdk/wallet-evm": "workspace:*",
+        "@frog-sdk/wallet-viem": "workspace:*",
+        "@modelcontextprotocol/sdk": "1.0.4",
+        "dotenv": "^16.4.5",
+        "viem": "2.21.49"
+    },
+    "devDependencies": {
+        "@types/node": "22.7.4"
+    }
+}

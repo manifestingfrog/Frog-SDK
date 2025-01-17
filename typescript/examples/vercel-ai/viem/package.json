@@ -1,0 +1,23 @@
+{
+    "name": "frog-examples-vercel-ai-viem",
+    "version": "0.2.9",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "vitest run --passWithNoTests"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@ai-sdk/openai": "^1.0.4",
+        "@frog-sdk/adapter-vercel-ai": "workspace:*",
+        "@frog-sdk/core": "workspace:*",
+        "@frog-sdk/plugin-erc20": "workspace:*",
+        "@frog-sdk/plugin-erc721": "workspace:*",
+        "@frog-sdk/wallet-evm": "workspace:*",
+        "@frog-sdk/wallet-viem": "workspace:*",
+        "ai": "catalog:",
+        "dotenv": "^16.4.5",
+        "viem": "2.21.49"
+    }
+}

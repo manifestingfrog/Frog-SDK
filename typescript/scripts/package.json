@@ -1,0 +1,5 @@
+{
+    "name": "@frog-sdk/scripts",
+    "private": true,
+    "type": "module"
+}

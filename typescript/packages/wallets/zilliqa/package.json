@@ -1,0 +1,39 @@
+{
+    "name": "@frog-sdk/wallet-zilliqa",
+    "version": "0.2.5",
+    "sideEffects": false,
+    "files": ["dist/**/*", "README.md", "package.json"],
+    "scripts": {
+        "build": "tsup",
+        "clean": "rm -rf dist",
+        "test": "vitest run --passWithNoTests"
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "dependencies": {
+        "@frog-sdk/core": "workspace:*",
+        "@frog-sdk/wallet-evm": "workspace:*",
+        "@frog-sdk/wallet-viem": "workspace:*",
+        "@zilliqa-js/account": "3.5.0",
+        "@zilliqa-js/zilliqa": "3.5.0",
+        "abitype": "^1.0.8",
+        "viem": "catalog:",
+        "zod": "catalog:"
+    },
+    "peerDependencies": {
+        "@frog-sdk/core": "workspace:*",
+        "@frog-sdk/wallet-evm": "workspace:*",
+        "@frog-sdk/wallet-viem": "workspace:*"
+    },
+    "homepage": "https://ohmyfrog.dev",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/frog-sdk/frog.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/frog-sdk/frog/issues"
+    },
+    "keywords": ["ai", "agents", "web3"]
+}

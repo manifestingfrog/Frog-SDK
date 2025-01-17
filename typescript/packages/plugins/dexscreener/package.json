@@ -1,0 +1,20 @@
+{
+    "name": "@frog-sdk/plugin-dexscreener",
+    "version": "0.1.4",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "clean": "rm -rf dist"
+    },
+    "dependencies": {
+        "@frog-sdk/core": "workspace:*",
+        "zod": "catalog:"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "peerDependencies": {
+        "@frog-sdk/core": "workspace:*"
+    }
+}

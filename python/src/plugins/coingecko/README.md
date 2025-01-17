@@ -1,0 +1,1 @@
+## frog SDK Coingecko Plugin

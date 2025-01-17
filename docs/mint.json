@@ -1,0 +1,70 @@
+{
+	"$schema": "https://mintlify.com/schema.json",
+	"name": "frog",
+	"logo": {
+		"dark": "/logo/frog-dark.svg",
+		"light": "/logo/frog-light.svg"
+	},
+	"favicon": "/favicon.svg",
+	"colors": {
+		"primary": "#000000",
+		"light": "#ffffff",
+		"dark": "#000000",
+		"anchors": {
+			"from": "#000000",
+			"to": "#000000"
+		}
+	},
+	"font": {
+		"headings": {
+			"family": "Lexend"
+		},
+		"body": {
+			"family": "Lexend"
+		}
+	},
+	"tabs": [
+		{
+			"name": "Changelog",
+			"url": "changelog"
+		}
+	],
+	"anchors": [
+		{
+			"name": "Github",
+			"icon": "github",
+			"url": "https://github.com/frog-sdk/frog"
+		},
+		{
+			"name": "Discord",
+			"icon": "discord",
+			"url": "https://discord.gg/frog-sdk"
+		},
+        {
+			"name": "X",
+			"icon": "twitter",
+			"url": "https://x.com/frog_sdk"
+		},
+		{
+			"name": "frogs",
+			"icon": "youtube",
+			"url": "https://youtu.be/5IuRzJRrRpQ"
+		}
+	],
+	"navigation": [
+		{
+			"group": "Overview",
+			"pages": [
+				"introduction",
+				"chains-wallets-plugins",
+				"examples",
+				"plugins",
+				"wallets",
+				"chains"
+			]
+		}
+	],
+	"footerSocials": {
+		"github": "https://github.com/frog-sdk"
+	}
+}

@@ -1,0 +1,23 @@
+{
+    "name": "frog-examples-vercel-ai-headless-checkout",
+    "version": "0.2.8",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "vitest run --passWithNoTests"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@ai-sdk/openai": "^1.0.4",
+        "@frog-sdk/adapter-vercel-ai": "workspace:*",
+        "@frog-sdk/core": "workspace:*",
+        "@frog-sdk/plugin-crossmint-headless-checkout": "workspace:*",
+        "@frog-sdk/wallet-evm": "workspace:*",
+        "@frog-sdk/wallet-viem": "workspace:*",
+        "ai": "catalog:",
+        "dotenv": "^16.4.5",
+        "viem": "catalog:",
+        "zod": "catalog:"
+    }
+}

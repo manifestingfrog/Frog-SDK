@@ -1,0 +1,39 @@
+{
+    "name": "@frog-sdk/plugin-solana-nfts",
+    "version": "0.2.11",
+    "files": ["dist/**/*", "README.md", "package.json"],
+    "scripts": {
+        "build": "tsup",
+        "clean": "rm -rf dist",
+        "test": "vitest run --passWithNoTests"
+    },
+    "sideEffects": false,
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "dependencies": {
+        "@frog-sdk/core": "workspace:*",
+        "@frog-sdk/wallet-solana": "workspace:*",
+        "@metaplex-foundation/digital-asset-standard-api": "1.0.0",
+        "@metaplex-foundation/mpl-bubblegum": "4.2.1",
+        "@metaplex-foundation/umi": "^0.9.2",
+        "@metaplex-foundation/umi-bundle-defaults": "0.9.2",
+        "@metaplex-foundation/umi-web3js-adapters": "0.8.10",
+        "@solana/web3.js": "catalog:",
+        "got": "5.6.0",
+        "zod": "catalog:"
+    },
+    "peerDependencies": {
+        "@frog-sdk/core": "workspace:*"
+    },
+    "homepage": "https://ohmyfrog.dev",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/frog-sdk/frog.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/frog-sdk/frog/issues"
+    },
+    "keywords": ["ai", "agents", "web3"]
+}

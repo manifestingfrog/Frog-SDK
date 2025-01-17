@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "frog-sdk-monorepo"
+version = "0.0.1"
+description = "frog 🐸 (Great Onchain Agent Toolkit) is an open-source framework for connecting AI agents to any onchain app"
+authors = ["Andrea Villa <andreakarimodm@gmail.com>"]
+readme = "README.md"
+keywords = ["frog", "sdk", "web3", "agents", "ai"]
+homepage = "https://ohmyfrog.dev/"
+repository = "https://github.com/frog-sdk/frog"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.10.0"
+frog-sdk = { path = "src/frog-sdk/" }
+frog-sdk-plugin-coingecko = { path = "src/plugins/coingecko/" }
+frog-sdk-plugin-erc20 = { path = "src/plugins/erc20/" }
+frog-sdk-wallet-web3 = { path = "src/wallets/web3/" }
+frog-sdk-adapter-langchain = { path = "src/adapters/langchain/" }
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.0"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/frog-sdk/frog/issues"
+
+[tool.pytest.ini_options]
+addopts = [
+  "--import-mode=importlib",
+]
+pythonpath = "src"
+asyncio_default_fixture_loop_scope = "function"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

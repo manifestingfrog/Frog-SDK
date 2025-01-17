@@ -1,0 +1,367 @@
+/* General Styles */
+/* Background with a Node Grid */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Base background color */
+    background-image: 
+      radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px; /* Size of the grid */
+    background-position: 20px 20px; /* Offset for alignment */
+    color: #fff;
+    text-align: center;
+  }
+  
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .modal-button {
+   border: 0.1em solid rgba(255, 255, 255, 0.237);
+    color: white;
+    
+    padding:  8px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .modal-button:hover {
+
+background-color: #1e1e1e;
+  }
+
+
+  /* Hero Section */
+  main {
+    margin: 50px auto;
+    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+  
+  
+  /* Scrollbar Styling */
+  .transaction-data {
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #555 #2c2c2c; /* Firefox */
+  }
+  
+  .transaction-data::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .transaction-data::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+  }
+  
+  .transaction-data::-webkit-scrollbar-track {
+    background: #2c2c2c;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* Full-Screen Modal */
+ 
+  
+  /* Typewriter Effect */
+.typewriter {
+
+    font-family: monospace; /* Optional: For a typewriter-like font */
+    overflow: hidden; /* Ensures the text is hidden outside the container */
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+    border-right: 3px solid #fff; /* Creates the blinking cursor effect */
+    width: 0; /* Start with no visible text */
+    animation: typing 3s steps(30, end) infinite, blink 0.6s step-end infinite;
+  }
+  
+  /* Typing animation */
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    70% {
+      width: 100%; /* Full text visible */
+    }
+    100% {
+      width: 0; /* Reset to start typing again */
+    }
+  }
+  
+  /* Blinking cursor animation */
+  @keyframes blink {
+    from {
+      border-color: transparent;
+    }
+    to {
+      border-color: #fff;
+    }
+  }
+  
+
+
+.mainsec{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+  /* Card Container */
+/* Stream Card */
+.stream-card {
+    width: 60vw; /* Adjust width as needed */
+    /* Ensure it doesn't exceed a reasonable width */
+    aspect-ratio: 16 / 9; /* Maintain a video-like aspect ratio */
+    margin: 20px auto; /* Center horizontally and space from other elements */
+    background-color: #121212; /* Dark background color */
+    border: 1px solid #333; /* Subtle border for a clean look */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    overflow: hidden; /* Prevent content from spilling */
+    position: relative;
+   user-select: none; /* Prevent text selection */
+   
+  }
+  
+  /* Kick Widget (Centered Card) */
+  .kick-widget {
+    background-color: #1e1e1e; /* Slightly lighter than the card for contrast */
+    color: #fff;
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px 30px; /* Padding around the content */
+    text-align: center; /* Center the text */
+    font-family: Arial, sans-serif;
+    font-size: 1.2em; /* Text size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    position: relative;
+    z-index: 1; /* Ensure it stays above the background */
+  }
+  
+  /* Placeholder for "Offline" or Status */
+  .kick-widget::before {
+    content: "Offline"; /* Adjust content dynamically if needed */
+    background-color: #ff5f56; /* Red badge for "Offline" */
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: -10px; /* Adjust for positioning */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Footer Styles */
+.footer {
+    position: fixed; /* Ensures it stays at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Spans the entire width of the page */
+   /* Dark background color */
+    color: #ffffff55; /* Text color */
+    text-align: center; /* Center the content */
+    padding: 10px 0; /* Padding for spacing */
+    font-size: 0.53em; /* Slightly smaller font size */
+
+    z-index: 1000; /* Ensures it stays above other elements */
+  }
+  
+
+  @media screen and (max-width: 750px) {
+    .stream-card {
+       
+        width: 300px; /* Adjust as needed */
+        height: 160px; /* Adjust as needed */
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 20px auto;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+   
+    }
+
+/* Console-like Transaction Card */
+.txncard {
+  position: fixed; /* Keep the modal within the viewport */
+  z-index: 1000; /* Ensure the modal stays above other elements */
+  transition: all 0.3s ease; 
+  left: 35%;
+  /* Allow manual positioning */
+    top: calc(60% + 20px); /* Initial position below stream card */
+    /* Center horizontally */
+    /* Horizontal centering */
+    width: 30%; /* Console width */
+    height: 30%; /* Fixed height */
+    background: #1e1e1e; /* Dark background for console */
+    border: 1px solid #333; /* Subtle border for console frame */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    overflow: hidden; /* Clip overflow content */
+    font-family: "Courier New", Courier, monospace; /* Monospaced font for console effect */
+    color: #00ff00; /* Classic green terminal text */
+    z-index: 1000; /* Ensure it's on top */
+    cursor: grab; /* Indicate draggable */
+  
+   
+  }
+  
+  /* Console Header */
+  .txncard-header {
+    background: #000; /* Black header background */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #00ff00; /* Green terminal header text */
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #333; /* Separator line */
+    cursor: grab; /* Indicate draggable */
+  }
+  
+  /* Header Buttons */
+  .txncard-header .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    cursor: pointer; /* Change the cursor to a hand when hovering */
+  }
+  
+  .txncard-header .button:hover {
+    opacity: 0.8; /* Add a subtle hover effect for better feedback */
+  }
+  
+  
+  .txncard-header .button.red {
+    background: #ff5f56; /* Close button color */
+  }
+  
+  .txncard-header .button.yellow {
+    background: #ffbd2e; /* Minimize button color */
+  }
+  
+  .txncard-header .button.green {
+    background: #27c93f; /* Maximize button color */
+  }
+  
+
+/* Console Content */
+.txncard-content {
+    overflow-y: auto; /* Enable vertical scrolling */
+height: 40%;
+    padding: 10px;
+    font-family: "Courier New", Courier, monospace; /* Monospaced font for terminal effect */
+    font-size: 9px; /* Smaller font size */
+    line-height: 0.8; /* Reduced line spacing */
+    color: #ffffff; /* Classic green terminal text */
+    text-align: left; /* Align text to the left */
+    white-space: pre-wrap; /* Preserve whitespace for terminal-like text */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    background-color: #1e1e1e; /* Dark terminal-like background */
+    border-radius: 4px; /* Slightly rounded corners */
+    padding-bottom: 50px;
+ 
+  }
+  
+  /* Scrollbar Styling */
+  .txncard-content::-webkit-scrollbar {
+    width: 6px;
+    background-color: #1e1e1e; /* Match console background */
+  }
+  
+  .txncard-content::-webkit-scrollbar-thumb {
+    background-color: #333; /* Subtle scrollbar thumb */
+    border-radius: 3px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media screen and (max-width: 450px) {
+
+  .typewriter {
+    font-size: 13px;
+            font-family: monospace; /* Optional: For a typewriter-like font */
+    
+          }
+        }
+
+        @media screen and (max-width: 950px) {
+        .txncard {
+            position: absolute; /* Allow manual positioning */
+            top: calc(60% + 20px); /* Initial position below stream card */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Horizontal centering */
+            width: 80vw; /* Console width */
+            height: 23%; /* Fixed height */
+            background: #1e1e1e; /* Dark background for console */
+            border: 1px solid #333; /* Subtle border for console frame */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            overflow: hidden; /* Clip overflow content */
+            font-family: "Courier New", Courier, monospace; /* Monospaced font for console effect */
+            color: #00ff00; /* Classic green terminal text */
+            z-index: 1000; /* Ensure it's on top */
+            cursor: grab; /* Indicate draggable */
+          
+           
+          }
+        }
+
+
+        .links {
+          color: white;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+        }
+
+        .link{
+          font-family: "Courier New", Courier, monospace; /* Monospaced font for terminal effect */
+
+          color: white;
+          margin: 12px;
+        }

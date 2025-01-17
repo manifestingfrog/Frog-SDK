@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "frog-plugin-rugcheck"
+version = "0.1.0"
+description = "A Python rugcheck plugin for the frog SDK"
+authors = ["frog SDK Team"]
+packages = [
+    { include = "frog_plugins" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+frog-sdk = { path = "../../../.." }
+aiohttp = "^3.8.4"
+pydantic = "^1.10"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.0"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+pythonpath = "."
