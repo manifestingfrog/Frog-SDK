@@ -1,5 +1,7 @@
 
-
+<div align="center">
+Frog SDK 🐸 Frog SDK (Fast & Reliable Onchain Gateway) is an open-source framework designed to seamlessly integrate blockchain tools such as wallets, token trading, and smart contract interactions into your AI agent.
+</div>
 
 **Problem**: 
 
