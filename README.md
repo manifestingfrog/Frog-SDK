@@ -1,13 +1,5 @@
 
 
-<div align="center">
-### Frog SDK 🐸
-Frog SDK (Fast & Reliable Onchain Gateway) is an open-source framework designed to seamlessly integrate blockchain tools such as wallets, token trading, and smart contract interactions into your AI agent.
-
----
-</div>
-
-
 
 **Problem**: 
 
@@ -31,3 +23,62 @@ Frog SDK simplifies this complexity by offering an open-source, provider-agnosti
 
 **Why Frog SDK?**
 Frog SDK enables developers to leapfrog past the technical barriers of blockchain integration. Whether you're building AI-driven trading bots, DeFi protocols, or decentralized applications, Frog SDK simplifies the complexity and brings the power of the blockchain to your fingertips.
+
+
+### How it works
+frog plugs into your agents tool calling capabilities adding all the functions your agent needs to interact with the blockchain. 
+
+High-level, here's how it works:
+
+#### Configure the wallet you want to use
+```typescript
+// ... Code to connect your wallet (e.g createWalletClient from viem)
+const wallet = ...
+
+const tools = getOnChainTools({
+  wallet: viem(wallet),
+})
+```
+
+#### Add the plugins you need to interact with the protocols you want
+```typescript
+const wallet = ...
+
+const tools = getOnChainTools({
+  wallet: viem(wallet),
+  plugins: [
+    sendETH(),
+    erc20({ tokens: [USDC, PEPE] }),
+    faucet(),
+    polymarket(),
+    // ...
+  ],
+})
+```
+
+#### Connect it to your agent framework of choice
+```typescript
+// ... Code to connect your wallet (e.g createWalletClient from viem)
+const wallet = ...
+
+const tools = getOnChainTools({
+  wallet: viem(wallet),
+  plugins: [ 
+    sendETH(),
+    erc20({ tokens: [USDC, PEPE] }), 
+    faucet(), 
+    polymarket(), 
+    // ...
+  ],
+})
+
+// Vercel's AI SDK
+const result = await generateText({
+    model: openai("gpt-4o-mini"),
+    tools: tools,
+    maxSteps: 5,
+    prompt: "Send 420 ETH to ohmyfrog.eth",
+});
+```
+
+See [here](https://github.com/frog-sdk/frog/tree/main/typescript/examples) for more examples.
